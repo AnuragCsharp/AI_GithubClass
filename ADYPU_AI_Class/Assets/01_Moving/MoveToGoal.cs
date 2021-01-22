@@ -5,20 +5,47 @@ using UnityEngine;
 public class MoveToGoal : MonoBehaviour
 {
 
-	public	float		speed = 2.0f;
-	public	float		accuracy = 0.01f;
-	public	Transform	goal;
+    public float speed = 2.0f;
+    public float accuracy = 0.01f;
+    public Transform goal;
+    public Transform goal2;
 
-	
-	void LateUpdate()
-	{
-		this.transform.LookAt(goal.position);
-		Vector3 direction = goal.position - this.transform.position; //This is the vector between the goal position and the Character. Where we Going minus where we curently are 
-		Debug.DrawRay(this.transform.position, direction, Color.red);
-	
-		if (direction.magnitude > accuracy)
-		{
-			this.transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-		}
-	}
+
+
+    void LateUpdate()
+    {
+        Vector3 FirstGoalDirection = goal.position - this.transform.position;  
+        Vector3 SecondGoalDirection = goal2.position - this.transform.position; 
+       
+        if (this.gameObject.name == "Man")
+        { 
+            Debug.DrawRay(this.transform.position, FirstGoalDirection, Color.red);
+            this.transform.LookAt(goal.position);
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (FirstGoalDirection.magnitude > accuracy)
+                {
+                    this.transform.Translate(FirstGoalDirection.normalized * speed * Time.deltaTime, Space.World);
+                }
+            }
+
+        }
+        else
+        {
+            Debug.DrawRay(this.transform.position, SecondGoalDirection, Color.green);
+            this.transform.LookAt(goal2.position);
+
+            if (Input.GetKey(KeyCode.P))
+            {
+                if (SecondGoalDirection.magnitude > accuracy)
+                {
+                    this.transform.Translate(SecondGoalDirection.normalized * speed * Time.deltaTime, Space.World);
+                }
+            }
+
+        }
+    }
 }
+
+
