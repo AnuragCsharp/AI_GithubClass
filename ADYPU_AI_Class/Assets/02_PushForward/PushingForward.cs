@@ -5,8 +5,10 @@ using UnityEditor;
 
 public class PushingForward : MonoBehaviour
 {
-	
-	public float speed;
+	[SerializeField]
+	private float speed;
+
+
 
 	// Update is called once per frame
 	void Update()

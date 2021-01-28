@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WayPointFollow : MonoBehaviour
 {
-	public GameObject[] Arr_WayPoints;
+	public GameObject[] Arr_WayPoints; //Array of Game Object
 	int currentWP = 0;
 
 	public float speed = 5.0f;
