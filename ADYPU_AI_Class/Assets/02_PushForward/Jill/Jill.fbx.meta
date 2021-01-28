@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 3d664c5f262774eb49e3928ca6b6db2a
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 25
   internalIDToNameTable:
   - first:
       1: 100000
@@ -810,7 +810,7 @@ ModelImporter:
       name: Jill_HiMidRes_Teeth_MAT
     second: {fileID: 2100000, guid: b33805dab586545a6ab3c1d624f2d573, type: 2}
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -839,7 +839,7 @@ ModelImporter:
     - serializedVersion: 16
       name: mixamo.com
       takeName: mixamo.com
-      internalID: 0
+      internalID: 7400000
       firstFrame: 0
       lastFrame: 1
       wrapMode: 0
@@ -872,12 +872,10 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
-    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -906,6 +904,7 @@ ModelImporter:
   - e0da21e4e15be41e4a284137169745a6
   - 19a8f7b519e314cd4ab7a37d60b072b7
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 3
     human:
@@ -1972,10 +1971,8 @@ ModelImporter:
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
