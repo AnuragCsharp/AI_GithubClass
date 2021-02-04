@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AI_Move : MonoBehaviour
 {
@@ -15,9 +16,8 @@ public class AI_Move : MonoBehaviour
 		this.transform.position = DestinationGoalObject.transform.position;
 	}
 
-	// Update is called once per frame
-	void Update()
+	public void ReloadScene()
 	{
-
+		Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
 	}
 }

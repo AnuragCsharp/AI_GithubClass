@@ -4,17 +4,55 @@ using UnityEngine;
 
 public class WayPointFollow : MonoBehaviour
 {
-	public GameObject[] Arr_WayPoints; //Array of Game Object
-	int currentWP = 0;
+	public GameObject[]		Arr_WayPoints; //Array of Game Object
+	private	int				currentWP = 0;
 
-	public float speed = 5.0f;
-	public float accuracy = 1.0f;
-	public float rotspeed = 4.4f;
+	public float			speed = 5.0f;
+	public float			accuracy = 1.0f;
+	public float			rotspeed = 4.4f;
+
+	[SerializeField]
+	private  int ScoreKeeper=10;
+
+
+	public int ScoreKeeper_prop 
+	{ 
+		get
+		{
+			if (ScoreKeeper < 20)
+			{
+				return ScoreKeeper;
+			}
+			else
+			{
+				return 5;
+			}
+		}			
+		set
+		{
+			ScoreKeeper = value;
+		}
+	}
+
+
+	public int _Score 
+	{ 
+		get
+		{
+			return ScoreKeeper;
+		}
+		set
+		{
+			ScoreKeeper = value;
+		}
+	}
 
 	private void Start()
 	{
 		//we are getting all the WayPoints Sphere Object inside our Array
 		Arr_WayPoints = GameObject.FindGameObjectsWithTag("WayPoint");
+
+		
 	}
 
 	private void LateUpdate()
@@ -37,5 +75,12 @@ public class WayPointFollow : MonoBehaviour
 
 		this.transform.Translate(0, 0, speed * Time.deltaTime);
 		
+	}
+
+	public int Krishna()
+	{
+
+		Debug.Log("Krishna ka Score = " + ScoreKeeper);
+		return ScoreKeeper;
 	}
 }
