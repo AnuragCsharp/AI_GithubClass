@@ -6,7 +6,7 @@ public class FollowGoal : MonoBehaviour
 {
 
 	public	float		speed = 2.0f;
-	public float rotSpeed = 1.0f;
+	public float		rotSpeed = 1.0f;
 	public	Transform	goal;
 
 	
@@ -17,7 +17,6 @@ public class FollowGoal : MonoBehaviour
 		Vector3 direction = lookAtGoal - this.transform.position;
 
 		this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotSpeed);
-		
 		
 		this.transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
 		
